@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quran/constant.dart';
+import 'package:quran/core/constant.dart';
 import 'package:quran/view/screen/hadehscreen.dart';
 import 'package:quran/view/screen/quranscreen.dart';
 import 'package:quran/view/screen/raduoscreen.dart';
@@ -38,10 +38,16 @@ class _mainScreenState extends State<mainScreen> {
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
+
           appBar: AppBar(
+
             title: Text(
               "إسلامي",
-              style: TextStyle(color: Colors.black,fontSize: 30),
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 30,
+                fontWeight: FontWeight.w700,
+              ),
             ),
             centerTitle: true,
             backgroundColor: Colors.transparent,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../constant.dart';
+import '../../core/constant.dart';
 import '../../models/model.dart';
 import '../../models/model2.dart';
 
@@ -13,8 +13,7 @@ class QuranDetailsScreen extends StatelessWidget {
     double wightscreen = MediaQuery.of(context).size.width;
     double heightscreen = MediaQuery.of(context).size.height;
 
-    int? lengthlist()
-    {
+    int? lengthlist() {
       suradetails.forEach((key, value) {
         return value.length;
       });
@@ -47,15 +46,18 @@ class QuranDetailsScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Row(
-
-                      children: [ SizedBox(width: 100,),
+                      children: [
+                        SizedBox(
+                          width: 100,
+                        ),
                         Text(
                           'سورة ${nameSora} ',
                           style: TextStyle(fontSize: 25),
                         ),
-                        SizedBox(width: 30,),
+                        SizedBox(
+                          width: 30,
+                        ),
                         Image.asset('assets/images/suraicon.png'),
-
                       ],
                     ),
                     Container(
@@ -67,14 +69,14 @@ class QuranDetailsScreen extends StatelessWidget {
                     Flexible(
                       child: ListView.builder(
                           itemCount:
-                          // suradetails.values.elementAt(i),
-                          lengthlist(),
+                              // suradetails.values.elementAt(i),
+                              lengthlist(),
                           itemBuilder: (context, i) {
                             return Padding(
                               padding: const EdgeInsets.only(
                                   left: 10, right: 10, top: 5),
                               child: Text(
-                                suradetails["${i+1}"][i]["text"],
+                                suradetails["${i + 1}"][i]["text"],
                                 textDirection: TextDirection.rtl,
                               ),
                             );
