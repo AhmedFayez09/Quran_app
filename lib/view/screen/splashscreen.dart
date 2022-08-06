@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:quran/test.dart';
 import 'package:quran/view/screen/mainscreen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -12,9 +11,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
-
-
-   AnimationController? animationController;
+  AnimationController? animationController;
   Animation<double>? fadingAnimation;
 
   @override
@@ -31,29 +28,15 @@ class _SplashScreenState extends State<SplashScreen>
       () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) =>
-              mainScreen(),
+          builder: (context) => mainScreen(),
           // test(),
         ),
       ),
     );
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
   @override
   void dispose() {
-
     animationController?.dispose();
     super.dispose();
   }
@@ -63,15 +46,9 @@ class _SplashScreenState extends State<SplashScreen>
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: Center(
-        child:
-
-        FadeTransition(
+        child: FadeTransition(
           opacity: fadingAnimation!,
-          child:
-
-
-
-          Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(height: 300),

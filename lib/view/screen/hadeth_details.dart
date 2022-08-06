@@ -38,20 +38,28 @@ class HadethDetails extends StatelessWidget {
               height: heightscreen * 0.7,
               color: Color(0xffF8F8F8),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    // crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(
-                        width: 70,
-                      ),
+
                       Text(
                         ' ${model.title} ',
-                        style: TextStyle(fontSize: 35),
+                        style: TextStyle(fontSize: 25),
                       ),
-                      SizedBox(
-                        width: 5,
+
+                      Container(
+                        margin: EdgeInsets.only(left: 10),
+                        height: 40,
+                        width: 40,
+                        child: Image.asset(
+                          'assets/images/suraicon.png',
+                          fit: BoxFit.fill,
+                        ),
                       ),
-                      Image.asset('assets/images/suraicon.png'),
                     ],
                   ),
                   Container(
