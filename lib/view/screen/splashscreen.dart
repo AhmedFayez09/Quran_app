@@ -24,16 +24,22 @@ class _SplashScreenState extends State<SplashScreen>
 
     animationController?.repeat(reverse: true);
     Timer(
-        Duration(seconds: 3),
-        () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => mainScreen())));
+      Duration(seconds: 3),
+      () => Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => mainScreen(),
+          // test(),
+        ),
+      ),
+    );
   }
 
-  // @override
-  // void dispose() {
-  //   super.dispose();
-  //   animationController?.dispose();
-  // }
+  @override
+  void dispose() {
+    animationController?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

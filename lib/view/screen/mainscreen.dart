@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:quran/constant.dart';
+import 'package:quran/core/constant.dart';
 import 'package:quran/view/screen/hadehscreen.dart';
 import 'package:quran/view/screen/quranscreen.dart';
 import 'package:quran/view/screen/raduoscreen.dart';
 import 'package:quran/view/screen/sebahscreen.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:quran/view/screen/settings_screen.dart';
 class mainScreen extends StatefulWidget {
   const mainScreen({Key? key}) : super(key: key);
 
@@ -20,6 +21,7 @@ class _mainScreenState extends State<mainScreen> {
     HadehScreen(),
     SebahScreen(),
     RadioScreen(),
+    SettingScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -38,10 +40,16 @@ class _mainScreenState extends State<mainScreen> {
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
+
           appBar: AppBar(
+
             title: Text(
-              "إسلامي",
-              style: TextStyle(color: Colors.black,fontSize: 30),
+              AppLocalizations.of(context)!.titleapp,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 30,
+                fontWeight: FontWeight.w700,
+              ),
             ),
             centerTitle: true,
             backgroundColor: Colors.transparent,
@@ -64,6 +72,9 @@ class _mainScreenState extends State<mainScreen> {
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage('assets/images/radio.png')),
                   label: 'الراديو'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.settings,size: 22,),
+                  label: 'الاعدادات'),
             ],
             currentIndex: _selectedIndex,
             selectedItemColor: Colors.white,
